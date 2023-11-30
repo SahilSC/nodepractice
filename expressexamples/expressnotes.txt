@@ -1,0 +1,19 @@
+res method
+
+res.send("Hello") - directly sends message onto webpage
+res.sendStatus(500) - displays corresponding error (Internal Server Error) on webpage
+res.status(500).send("Hi") - displays message but in console there is an error matching code 500
+res.json({message: "error"}) - sends json to client
+
+_________________________________________________________________
+req methods
+
+req.body - includes the data sent by a form (to access, use req.body.[name] where name is the name of the form's input)
+req.params - if you have a dynamic url (ex. '/[id]'), use req.params.[name] to get the dynamic parameter
+req.query - if you add query parameters to url (ex. '/new/users?name=John'), use req.query.[name] to get parameter value
+
+_________________________________________________________________
+middleware
+
+app.use(middlewarefunction) - to use middleware for all things after
+router.get("/", function1, function2, (req, res) => {...}) - middleware function1, then function2
