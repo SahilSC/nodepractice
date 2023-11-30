@@ -1,0 +1,56 @@
+npm init -y - creates the package.json for your project
+-use this if you want utilize the most basic version of node project
+
+npm install/npm i - reads the package.json and downloads the packages there
+-would use when pulling from someone else's git repo
+
+npm start - alias for npm run start to run start script
+
+npm install/i [packagename] - installs packagename into node_modules folder
+npm install/i [packagename]@2.1.2 - installs a specific version
+
+npm update - checks for updates
+
+npm uninstall/un/rm [packagename]- uninstalls package from dependencies 
+
+npm uninstall/un/rm [packagename] -D - uninstalls package from devDependencies 
+
+
+nodemon [filename-without-extension] - uses nodemon (hot reload) to set up a file
+
+nodemon - equivalent to nodemon index.js
+
+__________________________________________________________________________________________
+scripts
+
+"scripts": {
+"start": "node index",
+"dev": "nodemon index"
+},
+-these denote the scripts for your project. key = script name, value = commands executed
+-to run a script, do npm run [scriptname]
+-npm start = npm run start (shorthand)
+example:
+    npm run dev
+
+
+"dependencies": {
+"date-fns": "^2.30.0",
+"uuid": "^9.0.1"
+},
+-denote packages needed to install for your project for production
+-"^9.0.1" 
+    9 is major version
+    0 is minor version
+    1 is patch
+- ^ means you can update minor/path, but not major
+- no ^ and just "9.0.1" = use exact version
+- "*" = use latest version
+
+
+"devDependencies": {
+"nodemon": "^3.0.1"
+}
+-denote packages needed during development. these devDependencies + dependencies are used to run the script
+-npm install/i --save-dev/-D nodemon
+
